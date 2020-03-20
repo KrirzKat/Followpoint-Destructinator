@@ -16,7 +16,6 @@ namespace Followpoint_Destructinator
         {
             InitializeComponent();
 
-            folderBrowserDialog1.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,17 +25,27 @@ namespace Followpoint_Destructinator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-            FileManager.ChooseFolder(folderBrowserDialog1, textBox1);
+            FileManager.UnpackSkins("bruh");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FilepathButton_Click(object sender, EventArgs e)
+        {
+            osuSkin.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            
         }
     }
 }
