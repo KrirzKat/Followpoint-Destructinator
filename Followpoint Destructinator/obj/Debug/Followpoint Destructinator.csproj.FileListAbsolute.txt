@@ -1,0 +1,10 @@
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\bin\Debug\Followpoint Destructinator.exe.config
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\bin\Debug\Followpoint Destructinator.exe
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\bin\Debug\Followpoint Destructinator.pdb
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint Destructinator.csprojAssemblyReference.cache
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint_Destructinator.Form1.resources
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint_Destructinator.Properties.Resources.resources
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint Destructinator.csproj.GenerateResource.cache
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint Destructinator.csproj.CoreCompileInputs.cache
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint Destructinator.exe
+C:\Users\Joey\source\repos\Followpoint Destructinator\Followpoint Destructinator\obj\Debug\Followpoint Destructinator.pdb
