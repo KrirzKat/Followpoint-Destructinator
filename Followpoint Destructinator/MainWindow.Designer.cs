@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.DirectoryBox = new System.Windows.Forms.TextBox();
+            this.FileBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FilepathButton = new System.Windows.Forms.Button();
             this.osuSkin = new System.Windows.Forms.OpenFileDialog();
             this.label2 = new System.Windows.Forms.Label();
             this.unpackedBox = new System.Windows.Forms.CheckBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // DeleteButton
@@ -52,14 +54,14 @@
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // DirectoryBox
+            // FileBox
             // 
-            this.DirectoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DirectoryBox.Location = new System.Drawing.Point(12, 32);
-            this.DirectoryBox.Name = "DirectoryBox";
-            this.DirectoryBox.Size = new System.Drawing.Size(177, 24);
-            this.DirectoryBox.TabIndex = 1;
-            this.DirectoryBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.FileBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FileBox.Location = new System.Drawing.Point(12, 32);
+            this.FileBox.Name = "FileBox";
+            this.FileBox.Size = new System.Drawing.Size(177, 24);
+            this.FileBox.TabIndex = 1;
+            this.FileBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -110,6 +112,12 @@
             this.unpackedBox.TabIndex = 5;
             this.unpackedBox.Text = "Unpacked?";
             this.unpackedBox.UseVisualStyleBackColor = true;
+            this.unpackedBox.CheckedChanged += new System.EventHandler(this.unpackedBox_CheckedChanged);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Form1
             // 
@@ -120,11 +128,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FilepathButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DirectoryBox);
+            this.Controls.Add(this.FileBox);
             this.Controls.Add(this.DeleteButton);
             this.Name = "Form1";
             this.Text = "Followpoint Destructinator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,12 +141,13 @@
 
         #endregion
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.TextBox DirectoryBox;
+        private System.Windows.Forms.TextBox FileBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button FilepathButton;
         public System.Windows.Forms.OpenFileDialog osuSkin;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.CheckBox unpackedBox;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 

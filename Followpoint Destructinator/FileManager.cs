@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 using System.IO;
 using System.IO.Compression;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Followpoint_Destructinator
 {
     static class FileManager
     {
+        //
         public static void CreateDirectory(string filepath, string name)
         {
-            Directory.CreateDirectory((filepath + name));
+            if(!Directory.Exists(filepath + name))
+                Directory.CreateDirectory((filepath + name));   
         }
 
         public static void CreateDirectory(string name)
         {
-            Directory.CreateDirectory($"..{name}");
+            if(!Directory.Exists(name))
+                Directory.CreateDirectory(name);
         }
 
         public static void DeleteDirectory(TextBox pathBox)
@@ -34,23 +38,34 @@ namespace Followpoint_Destructinator
             return false;
         }
 
-        public static void ChooseFolder(FolderBrowserDialog dialog, TextBox pathBox)
+        public static void ChooseFile(OpenFileDialog dialog, TextBox pathBox)
         {
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                pathBox.Text = dialog.SelectedPath;
+                pathBox.Text = dialog.FileName;
             }
         }
 
-        public static void UnpackSkins(string fileName, string packedFile)
+        public static void UnpackSkins(string packedFile)
         {
-            if (!Directory.Exists(fileName))
-                Directory.CreateDirectory(@"fileName");
+            ProcessStartInfo startInfo = new ProcessStartInfo($@"{Directory.GetCurrentDirectory()}/Dependencies/OSKUnpacker.exe");
+            startInfo.CreateNoWindow = false;
+            startInfo.Arguments = packedFile;
 
-            Stream tream = Stream.Null;
-            GZipStream stream = new GZipStream(tream, CompressionLevel.NoCompression);
+            Process unpacker = new Process();
+            unpacker.StartInfo = startInfo;
+            
+            unpacker.Start();
 
-            stream.Write
+            while(!unpacker.HasExited)
+            {
+
+            }
+        }
+
+        public static void PackSkins(string file)
+        {
+
         }
 
         public static void DestroySkin(string fileName)
@@ -58,7 +73,7 @@ namespace Followpoint_Destructinator
             Directory.Delete(fileName);
         }
 
-        public static int GetFileCount(string filepath)
+        /*public static int GetFileCount(string filepath)
         {
             int total = 0;
             foreach (string i in Directory.GetFiles(filepath))
@@ -74,19 +89,17 @@ namespace Followpoint_Destructinator
                 }
             }
             return total;
-        }
+        }*/
 
-        public static void ChangeImage(string filepath, bool packed)
+        public static void ChangeImage(TextBox box, bool packed)
         {
-            int totalFiles = GetFileCount(filepath);
-            if(packed)
+            if(!packed)
             {
-                UnpackSkins(filepath);
-                GetFileCount(filepath);
+                UnpackSkins(box.Text);
             }
             else
             {
-                GetFileCount(filepath);
+                
             }
         }
     }
