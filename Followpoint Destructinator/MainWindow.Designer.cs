@@ -35,9 +35,7 @@
             this.FilepathButton = new System.Windows.Forms.Button();
             this.osuSkin = new System.Windows.Forms.OpenFileDialog();
             this.label2 = new System.Windows.Forms.Label();
-            this.unpackedBox = new System.Windows.Forms.CheckBox();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // DeleteButton
@@ -103,28 +101,11 @@
             this.label2.TabIndex = 4;
             this.label2.Text = resources.GetString("label2.Text");
             // 
-            // unpackedBox
-            // 
-            this.unpackedBox.AutoSize = true;
-            this.unpackedBox.Location = new System.Drawing.Point(140, 9);
-            this.unpackedBox.Name = "unpackedBox";
-            this.unpackedBox.Size = new System.Drawing.Size(82, 17);
-            this.unpackedBox.TabIndex = 5;
-            this.unpackedBox.Text = "Unpacked?";
-            this.unpackedBox.UseVisualStyleBackColor = true;
-            this.unpackedBox.CheckedChanged += new System.EventHandler(this.unpackedBox_CheckedChanged);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.unpackedBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FilepathButton);
             this.Controls.Add(this.label1);
@@ -133,7 +114,6 @@
             this.Name = "Form1";
             this.Text = "Followpoint Destructinator";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,8 +126,7 @@
         private System.Windows.Forms.Button FilepathButton;
         public System.Windows.Forms.OpenFileDialog osuSkin;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.CheckBox unpackedBox;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
